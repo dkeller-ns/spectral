@@ -223,28 +223,28 @@ mod tests {
     }
 
     #[test]
-    #[should_panic(expected = "\n\texpected: float close to <1> (tolerance of <0.01>)\
-                   \n\t but was: <2>")]
+    #[should_panic(expected = "\n\texpected: float close to <1.0> (tolerance of <0.01>)\
+                   \n\t but was: <2.0>")]
     fn should_panic_if_float_is_not_close_to() {
         assert_that(&2.0f64).is_close_to(1.0f64, 0.01f64);
     }
 
     #[test]
-    #[should_panic(expected = "\n\texpected: float close to <1> (tolerance of <0.01>)\
+    #[should_panic(expected = "\n\texpected: float close to <1.0> (tolerance of <0.01>)\
                    \n\t but was: <NaN>")]
     fn should_panic_if_float_is_nan() {
         assert_that(&Float::nan()).is_close_to(1.0f64, 0.01f64);
     }
 
     #[test]
-    #[should_panic(expected = "\n\texpected: float close to <1> (tolerance of <0.01>)\
+    #[should_panic(expected = "\n\texpected: float close to <1.0> (tolerance of <0.01>)\
                    \n\t but was: <inf>")]
     fn should_panic_if_float_is_infinity() {
         assert_that(&Float::infinity()).is_close_to(1.0f64, 0.01f64);
     }
 
     #[test]
-    #[should_panic(expected = "\n\texpected: float close to <1> (tolerance of <0.01>)\
+    #[should_panic(expected = "\n\texpected: float close to <1.0> (tolerance of <0.01>)\
                    \n\t but was: <-inf>")]
     fn should_panic_if_float_is_negative_infinity() {
         assert_that(&Float::neg_infinity()).is_close_to(1.0f64, 0.01f64);
